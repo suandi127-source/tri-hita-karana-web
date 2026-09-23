@@ -24,6 +24,7 @@ const { chromium } = require('playwright');
       assert.match(await page.locator('#g-panel-title').innerText(), new RegExp(name));
       assert.equal(await page.locator('[role="tab"][tabindex="0"]').count(), 1);
       await page.locator('#g-panel-img').evaluate(image => image.decode());
+      assert.equal(await page.locator('#g-panel-img').evaluate(image => image.naturalHeight > image.naturalWidth && image.clientHeight > image.clientWidth && image.clientWidth <= image.naturalWidth), true, `${name} must use a portrait image without upscaling`);
       await page.locator('#g-read').click();
       assert.equal(await page.locator('#g-dialog-title').innerText(), name);
       await page.keyboard.press('Escape');
@@ -36,6 +37,11 @@ const { chromium } = require('playwright');
     await page.keyboard.press('ArrowLeft');
     assert.equal(await page.locator('#g-tab-2').getAttribute('aria-selected'), 'true');
     await page.keyboard.press('Home');
+    assert.equal(await page.locator('#g-tab-0').getAttribute('aria-selected'), 'true');
+    assert.equal(await page.locator('[role="tablist"]').getAttribute('aria-orientation'), 'vertical');
+    await page.keyboard.press('ArrowDown');
+    assert.equal(await page.locator('#g-tab-1').getAttribute('aria-selected'), 'true');
+    await page.keyboard.press('ArrowUp');
     assert.equal(await page.locator('#g-tab-0').getAttribute('aria-selected'), 'true');
 
     for (const answer of [1, 0, 1]) {
@@ -69,8 +75,21 @@ const { chromium } = require('playwright');
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('#g-menu').getAttribute('aria-expanded'), 'false');
     assert.equal(await page.evaluate(() => document.activeElement.id), 'g-menu');
+    assert.equal(await page.locator('[role="tablist"]').getAttribute('aria-orientation'), 'horizontal');
+
+    // Motion must reveal all content, and switching to reduced motion must make it still.
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await page.reload({ waitUntil: 'networkidle' });
+    assert.ok(await page.locator('.g-hero-heading h1').evaluate(node => node.getAnimations().length));
+    for (const section of ['.g-intro', '#g-explore', '#g-school', '.g-school-list li:last-child', '#g-quiz']) {
+      await page.locator(section).scrollIntoViewIfNeeded();
+      await page.waitForFunction(selector => !document.querySelector(selector).classList.contains('g-pending'), section);
+    }
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    assert.equal(await page.locator('.g-hero-heading h1').evaluate(node => getComputedStyle(node).animationName), 'none');
+    assert.equal(await page.locator('#g-panel-img').evaluate(node => node.getAnimations().length), 0);
     assert.deepEqual(errors, []);
-    console.log('PASS: content, local assets, tabs, keyboard, dialogs, quiz, mobile menu, light/dark, and layouts from 320 to 1440px.');
+    console.log('PASS: portrait assets without upscaling, tab orientation and keyboard, dialogs, quiz, mobile menu, light/dark, 320-1440px layouts, scroll reveals, and reduced motion.');
   } finally {
     await browser.close();
   }
