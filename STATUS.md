@@ -1,9 +1,10 @@
 # STATUS.md — Project State & Multi-Agent Handoff
 
-> **Last Updated**: 2026-09-23 23:15 WITA  
-> **Current Lead Agent**: Antigravity (AG)  
-> **Previous Agent**: OpenAI Codex  
-> **Status**: ✅ Standalone Environment Initialized & Fully Operational
+> **Last Updated**: 2026-09-23 23:38 WITA  
+> **Current Lead Agent**: Morty (Hermes Agent)  
+> **Previous Agent**: Antigravity (AG)  
+> **Status**: ✅ Standalone Environment Initialized & Published to GitHub Pages  
+> **Live Preview**: https://suandi127-source.github.io/tri-hita-karana-web/
 
 ---
 
@@ -11,6 +12,7 @@
 
 | Feature | Status | Details |
 | :--- | :---: | :--- |
+| **GitHub Deployment & Pages** | Done | Connected remote repository `suandi127-source/tri-hita-karana-web`, published main branch, and configured GitHub Pages preview. |
 | **Project Workspace** | Done | Migrated out of Codex hidden sandbox into standalone repo with clean HTML/CSS/JS split. |
 | **Design System** | Done | Forest green palette (`#183d2c` / `#f3f6ef`), lime accents (`#d6edae`), *Plus Jakarta Sans* font, FontAwesome icons. |
 | **Hero Section** | Done | Impactful typography ("Hidup selaras. Tumbuh bersama."), kicker, CTA button, and AI landscape artwork. |

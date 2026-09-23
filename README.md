@@ -1,5 +1,7 @@
 # Tri Hita Karana — Interactive Web Experience
 
+🌐 **Live Preview**: [https://suandi127-source.github.io/tri-hita-karana-web/](https://suandi127-source.github.io/tri-hita-karana-web/)
+
 Sebuah website interaktif yang memperkenalkan dan mengeksplorasi filosofi kearifan lokal Bali: **Tri Hita Karana** (tiga penyebab terciptanya kebahagiaan dan keharmonisan).
 
 1. **Parahyangan** — Harmoni hubungan manusia dengan Sang Pencipta / Tuhan.
