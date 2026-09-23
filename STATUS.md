@@ -17,7 +17,7 @@
 | **3 Pillars Tabs** | Done | Interactive tablist (Parahyangan, Pawongan, Palemahan) with animated slider, dynamic image alignment, and bullet examples. |
 | **Deep-Dive Dialog** | Done | Accessible native `<dialog>` modal showing philosophical backstory, practical daily actions, and smooth entrance/exit. |
 | **Interactive Quiz** | Done | 3 questions with real-time progress bar, instant feedback, scoring, and retry functionality. |
-| **Dev Server** | Done | Zero-dependency `server.cjs` serving on port `4181` with proper MIME types. |
+| **Dev Server** | Done | Zero-dependency `server.cjs` serving on port `4182` with proper MIME types. |
 | **Multi-Agent Protocol** | Done | `AGENTS.md` and `STATUS.md` established for AG, Codex, and Hermes. |
 
 ---

@@ -16,11 +16,11 @@ npm run dev
 # atau
 node server.cjs
 ```
-Buka browser di **[http://localhost:4181](http://localhost:4181)**.
+Buka browser di **[http://localhost:4182](http://localhost:4182)**.
 
 ### Menggunakan Python (Alternatif tanpa Node):
 ```bash
-python -m http.server 4181
+python -m http.server 4182
 ```
 
 ---

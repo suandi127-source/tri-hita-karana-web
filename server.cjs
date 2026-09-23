@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 4181;
+const PORT = process.env.PORT || 4182;
 const BASE_DIR = __dirname;
 
 const MIME_TYPES = {
@@ -62,9 +62,26 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Tri Hita Karana Dev Server running:`);
-  console.log(`  > Local:   http://localhost:${PORT}/`);
-  console.log(`  > Network: http://127.0.0.1:${PORT}/`);
-  console.log(`Press Ctrl+C to stop.`);
+let currentPort = Number(PORT);
+
+function startServer(portToTry) {
+  server.listen(portToTry, '0.0.0.0', () => {
+    console.log(`Tri Hita Karana Dev Server running:`);
+    console.log(`  > Local:   http://localhost:${portToTry}/`);
+    console.log(`  > Network: http://127.0.0.1:${portToTry}/`);
+    console.log(`Press Ctrl+C to stop.`);
+  });
+}
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.log(`Port ${currentPort} is busy, trying ${currentPort + 1}...`);
+    currentPort += 1;
+    startServer(currentPort);
+  } else {
+    console.error('Server error:', err);
+  }
 });
+
+startServer(currentPort);
+

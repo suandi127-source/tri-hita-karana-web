@@ -8,15 +8,15 @@ This file serves as the unified protocol for any AI coding assistant (**Antigrav
   * Pure Semantic HTML5 (`<dialog>`, `<figure>`, `<main>`, `role`, `aria-*`)
   * Modern CSS (`css/style.css`) with CSS custom properties (`light-dark()`), grid, container queries, and fluid typography.
   * Vanilla ES6 JavaScript (`js/app.js`) — zero bundler, zero framework overhead.
-  * Lightweight Node.js preview server (`server.cjs`) on port `4181`.
+  * Lightweight Node.js preview server (`server.cjs`) on port `4182`.
 
 ---
 
 ## 🚀 How to Run & Preview
 * **Start Server**: `node server.cjs` or `npm run dev`
 * **Access URL**:
-  * Local: `http://127.0.0.1:4181` or `http://localhost:4181`
-  * LAN / Mobile: `http://<YOUR-IP>:4181`
+  * Local: `http://127.0.0.1:4182` or `http://localhost:4182`
+  * LAN / Mobile: `http://<YOUR-IP>:4182`
 * **Verify**: Ensure HTTP status is 200 and assets (images, CSS, JS) load without console errors.
 
 ---
