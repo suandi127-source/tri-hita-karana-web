@@ -15,6 +15,8 @@ const MIME_TYPES = {
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
   '.avif': 'image/avif',
+  '.ttf': 'font/ttf',
+  '.woff2': 'font/woff2',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon'
 };
@@ -84,4 +86,3 @@ server.on('error', (err) => {
 });
 
 startServer(currentPort);
-

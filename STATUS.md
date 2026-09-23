@@ -1,10 +1,10 @@
 # STATUS.md — Project State & Multi-Agent Handoff
 
-> **Last Updated**: 2026-09-23 23:38 WITA  
-> **Current Lead Agent**: Morty (Hermes Agent)  
-> **Previous Agent**: Antigravity (AG)  
-> **Status**: ✅ Standalone Environment Initialized & Published to GitHub Pages  
-> **Live Preview**: https://suandi127-source.github.io/tri-hita-karana-web/
+> **Last Updated**: 2026-09-24 WITA
+> **Current Lead Agent**: OpenAI Codex
+> **Previous Agent**: Morty (Hermes Agent)
+> **Status**: ✅ Bali in Every Corner layout and content completed locally; ready for review
+> **Previously Published Version**: https://suandi127-source.github.io/tri-hita-karana-web/
 
 ---
 
@@ -26,9 +26,11 @@
 
 ## 📌 Active Backlog / Next Steps for Incoming Agent
 
-1. **Photo Integration from `Prahyangan/`**:
-   * Several high-res photos exist in `Prahyangan/` (`.avif` format).
-   * Integrate these into a secondary visual gallery or alternate pillar backgrounds instead of relying solely on the single hero image.
+1. **Review and publish this update**:
+   * The new layout is available at `http://127.0.0.1:4182`.
+   * This update has not been pushed or deployed. Review before publishing.
+   * Parahyangan uses the supplied melukat photograph; Pawongan uses the supplied group ritual photograph, and Palemahan uses the existing rice-terrace photograph.
+   * A dedicated cooperation photograph could replace the Pawongan image when one is available.
 2. **Ambient Sound / Audio Experience**:
    * Optional toggle for gentle Balinese nature/rindik sound to enhance immersion.
 3. **Bilingual Support (ID / EN)**:
@@ -41,3 +43,14 @@
 ## 📜 Agent Activity Log
 * **2026-09-23 (OpenAI Codex)**: Explored initial Tri Hita Karana concepts, crafted forest green + lime motion prototype, tested with Playwright.
 * **2026-09-23 (Antigravity)**: Extracted from Codex sandbox to clean project directory; modularized into `index.html`, `css/style.css`, `js/app.js`, `assets/`; implemented `server.cjs`; configured universal `AGENTS.md` and `STATUS.md`; initialized Git repo.
+
+## 2026-09-24: Bali in Every Corner content and layout
+
+- Header and page title updated to Bali in Every Corner. Hero now introduces Tri Hita Karana and the requested subtitle.
+- Added the definition, exact meanings and everyday examples for all three relationships, and a dedicated school section. Removed duplicated source copy.
+- Preserved the forest palette, interactive tabs, detail dialogs, and quiz. Improved type scale, section spacing, responsive layout, focus indicators, tab keyboard behavior, and mobile-menu Escape handling.
+- Selected local photographs from Prahyangan/ and assets/images/. Font and icon assets now load locally, with original licenses in assets/fonts/.
+- Updated desktop, mobile, and dark-mode screenshots in assets/previews/.
+- Verification: HTTP 200; all requested assets loaded without request or JavaScript errors; keyboard tabs and dialogs; correct and incorrect quiz answers and retry; mobile menu; no horizontal overflow at 320, 390, 768, 1024, and 1440px. Light/dark screenshots visually reviewed; reduced-motion mode exercised.
+- Reproducible browser check: scripts/verify.cjs (requires an existing Playwright installation available through NODE_PATH and a running preview server; no frontend dependencies added). Lighthouse was unavailable in the bundled tools, so performance scores were not measured.
+- Next step: user review of the local layout, then publish if requested. Audio, bilingual support, and PWA remain optional backlog items.
