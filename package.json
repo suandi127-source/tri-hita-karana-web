@@ -2,10 +2,8 @@
   "name": "tri-hita-karana-web",
   "version": "1.0.0",
   "description": "Interactive website exploring Tri Hita Karana philosophy with motion design and quiz",
-  "main": "server.cjs",
   "scripts": {
-    "dev": "node server.cjs",
-    "start": "node server.cjs"
+    "dev": "node server.cjs"
   },
   "keywords": [
     "tri-hita-karana",

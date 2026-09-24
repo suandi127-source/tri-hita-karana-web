@@ -1,6 +1,8 @@
-.site-bar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px max(16px,calc((100% - 1120px)/2));background:#f5f1e8;border-bottom:1px solid #c7cebe;box-shadow:0 3px 14px #173c2a12;font:600 13px/1.4 'Plus Jakarta Sans',Arial,sans-serif;color:#203d2d}
-.site-bar .all-topics{display:inline-flex;align-items:center;min-height:44px;padding:10px 15px;background:#203d2d;color:#fff9e9;border-radius:8px;text-decoration:none}
-.site-bar button{width:auto;height:auto;min-height:44px;padding:10px 12px;border:1px solid #aebba3;border-radius:8px;background:transparent;color:#203d2d;font:inherit;cursor:pointer}
+.site-bar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px max(22px,calc((100% - 1120px)/2));background:#f5f1e8f5;border-bottom:1px solid #203d2d18;font:500 12px/1.4 'Plus Jakarta Sans',Arial,sans-serif;color:#203d2d;backdrop-filter:blur(12px)}
+.site-bar .all-topics{display:inline-flex;align-items:center;min-height:44px;padding:10px 0;background:transparent;color:inherit;border-radius:0;text-decoration:none}
+.site-bar button{width:auto;height:auto;min-height:44px;padding:10px 0 10px 16px;border:0;border-radius:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.site-bar .all-topics:hover,.site-bar button:hover{background:transparent;color:#65715b}
 .site-bar :focus-visible{outline:3px solid #997127;outline-offset:3px}
 html{scroll-padding-top:76px}
 .site-bar,.site-bar *{box-sizing:border-box}
+@media(prefers-color-scheme:dark){html[style*="light dark"] .site-bar{background:#17261ff5;color:#ede8d9;border-bottom-color:#ede8d925}}

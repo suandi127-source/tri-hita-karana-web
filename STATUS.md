@@ -143,3 +143,14 @@
 - Extracted music into js/music.js. Playback preference and time persist across full-page navigation via sessionStorage; paused music stays paused. Browser autoplay restrictions still apply; full-page transitions may briefly interrupt audio.
 - Verified sticky bar at quiz depth, single audio player, paused state across pages, resume at saved position, and responsive widths 320/390/1440. Screenshot inspected.
 - Interpreted user's 'lagi' as 'lagu' in context and implemented music globally. Publishing under standing authorization.
+
+## 2026-09-24: Quieter shared navigation styling
+- Refined shared sticky navigation into a slim ivory bar with text actions, subtle divider and no heavy button fills/shadows. Dark topic mode uses a matching forest background.
+- Kept 44px touch targets, visible keyboard focus and persistent navigation/music controls.
+- Verified sticky position, return link, target height and no overflow at 320/390/1440px; screenshot visually inspected.
+
+## 2026-09-24: Fix Vercel static deployment configuration
+- Identified cause of "404 Not Found: /index.html" on Vercel deployment: package.json had "main": "server.cjs" and "start": "node server.cjs", triggering Vercel's Node.js Serverless runtime where local static files weren't included in the lambda trace.
+- Removed "main" and "start" scripts from package.json so Vercel serves the project directly as a high-performance static website from its CDN. Retained "dev": "node server.cjs" for local development.
+- Added vercel.json with "cleanUrls": true for clean extensionless navigation.
+
