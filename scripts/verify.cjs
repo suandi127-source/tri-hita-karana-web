@@ -17,7 +17,7 @@ const { chromium } = require('playwright');
       errors.push(request.url());
     });
     page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
-    assert.equal((await page.goto(process.env.PREVIEW_URL || 'http://127.0.0.1:4182/tri-hita-karana.html', { waitUntil: 'networkidle' })).status(), 200);
+    assert.equal((await page.goto(process.env.PREVIEW_URL || 'http://127.0.0.1:4182/tri-hita-karana.html?embedded=1', { waitUntil: 'networkidle' })).status(), 200);
     assert.equal(await page.title(), 'Bali in Every Corner | Tri Hita Karana');
     assert.equal(await page.locator('h1').count(), 1);
     assert.match(await page.locator('#g-school').innerText(), /Berdoa sebelum belajar/);
@@ -75,7 +75,7 @@ const { chromium } = require('playwright');
     }
     await page.setViewportSize({ width: 390, height: 670 });
     await page.evaluate(() => scrollTo(0, 0));
-    for (const selector of ['.g-hero .g-action', '#g-audio-btn']) {
+    for (const selector of ['.g-hero .g-action']) {
       const box = await page.locator(selector).boundingBox();
       assert.ok(box.y >= 0 && box.y + box.height <= 670, selector + ' must fit with browser toolbars');
     }

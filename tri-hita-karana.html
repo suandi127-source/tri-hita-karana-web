@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="id" style="color-scheme: light dark;">
-<head>
+<head><script>
+if(new URLSearchParams(location.search).get('embedded')!=='1')location.replace('index.html?topic=tri-hita-karana');
+</script><style>.site-bar{display:none!important}</style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bali in Every Corner | Tri Hita Karana</title>
@@ -8,7 +10,7 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/mobile.css?v=3"><link rel="stylesheet" href="css/global.css"></head>
-<body><nav class="site-bar" aria-label="Navigasi dan musik"><a class="all-topics" href="index.html">← Semua topik</a><button id="g-audio-btn" type="button" aria-label="Putar musik latar Bali" aria-pressed="false"><span id="g-audio-label">▶ Putar musik</span></button><audio id="g-audio-el" preload="metadata" loop src="assets/audio/tri-hita-karana.mp3"></audio></nav>
+<body>
 
 <div id="thk-green" aria-label="Tri Hita Karana, eksplorasi interaktif">
  <a class="g-skip" href="#g-home">Lewati ke konten</a>
@@ -144,7 +146,7 @@
 
   <!-- Main Application Script -->
   <script src="js/app.js?v=5"></script>
-<script src="js/music.js"></script></body>
+</body>
 </html>
 
 

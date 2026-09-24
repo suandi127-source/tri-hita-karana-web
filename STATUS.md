@@ -155,3 +155,10 @@
 - Vercel now deploys directly as a pure Edge CDN static website. Added `vercel.json` with `"cleanUrls": true`.
 
 
+
+## 2026-09-24: Truly persistent global music
+- Fixed root cause: navigation recreated the audio document. Homepage now keeps a single music player mounted while showing/hiding a same-origin topic frame; top navigation stays outside it. No audio save/reload cycle on normal topic transitions.
+- Added history-aware navigation (?topic=tri-hita-karana), browser Back/Forward support, direct topic URL redirect, and redirects from older active previews to the current website.
+- Autoplay is attempted on entry; browser-blocked playback retries on gestures in either home or topic. Explicit pause is respected within the session. Fresh page entry attempts autoplay as requested.
+- scripts/verify-global-music.cjs passed under both allowed and blocked autoplay policies: identical audio element, currentTime >=20 across transitions, zero pause events, history, topic interaction and manual pause. Physical iPhone not tested; audible autoplay remains browser-controlled.
+- Topic controls/quiz remain in the existing zero-dependency app; site remains static-host compatible.

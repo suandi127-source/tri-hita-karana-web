@@ -5,4 +5,7 @@
 .site-bar :focus-visible{outline:3px solid #997127;outline-offset:3px}
 html{scroll-padding-top:76px}
 .site-bar,.site-bar *{box-sizing:border-box}
+.topic-frame{display:block;width:100%;height:calc(100vh - 53px);height:calc(100dvh - 53px);border:0;background:#f5f1e8}
+.topic-frame[hidden]{display:none}
+body.topic-open{overflow:hidden}
 @media(prefers-color-scheme:dark){html[style*="light dark"] .site-bar{background:#17261ff5;color:#ede8d9;border-bottom-color:#ede8d925}}
