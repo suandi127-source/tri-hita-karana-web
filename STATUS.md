@@ -78,3 +78,12 @@
 - **Comprehensive Visual Audit**: Generated high-resolution viewport captures for Hero (above the fold), 3 Pilar tabs, School section, Quiz box, Mobile menu drawer, and Dark Mode in `assets/previews/`.
 - **Review Artifact**: Documented mobile ergonomics, touch targets, and visual checkpoints in `mobile_design_review.md`.
 
+
+## 2026-09-24: Mobile-first concept for user review
+
+- Researched web.dev responsive design and W3C WCAG target size/reflow guidance.
+- Added mobile-review.html with current/concept comparison and 320/360/390/430px viewport choices; mobile-concept.html reuses current interactions and assets with isolated css/mobile-concept.css.
+- Proposed single-column hero, larger text and touch controls, shorter image crops, bottom-aligned detail dialog, and music control in page flow. These are review proposals, not production changes.
+- Verified HTTP/assets without errors, no horizontal overflow at all four sizes, pillar switching, dialog/Escape, quiz feedback, menu, and review controls. Visually inspected review screenshot; captures saved as assets/previews/mobile-concept-*.png.
+- Preview: http://127.0.0.1:4182/mobile-review.html. Main page and production CSS/JS untouched; not published.
+- Pending: user's review of hierarchy, image cropping, and music placement before implementing final mobile redesign.

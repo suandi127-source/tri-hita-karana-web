@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id" style="color-scheme: light dark;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konsep mobile | Bali in Every Corner</title>
+  <meta name="description" content="Kenali Tri Hita Karana: hubungan harmonis dengan Tuhan, sesama manusia, dan lingkungan, serta contoh penerapannya di sekolah.">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mobile-concept.css"></head>
+<body>
+
+<div id="thk-green" aria-label="Tri Hita Karana, eksplorasi interaktif">
+ <a class="g-skip" href="#g-home">Lewati ke konten</a>
+ <header class="g-nav g-wrap">
+   <a class="g-brand" href="#g-home"><span class="g-brand-mark"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span>Bali in Every Corner</a>
+   <button type="button" class="g-menu-toggle" id="g-menu" aria-expanded="false" aria-controls="g-navigation">Menu</button>
+   <nav class="g-navlinks" id="g-navigation" aria-label="Navigasi utama">
+     <a href="#g-explore">Jelajahi filosofi</a>
+     <a href="#g-school">Di sekolah</a>
+     <a href="#g-quiz">Uji pemahaman</a>
+     <a href="#g-about">Tentang</a>
+   </nav>
+ </header>
+ 
+ <main id="g-home" tabindex="-1">
+  <section class="g-hero g-wrap" aria-labelledby="g-title">
+    <div class="g-hero-layout">
+      <div class="g-hero-heading g-entrance">
+        <p class="g-kicker">KEARIFAN BALI, DEKAT DENGAN KITA</p>
+        <h1 id="g-title">Tri Hita<br><span>Karana.</span></h1>
+        <p class="g-hero-subtitle">Tiga hubungan.<br>Hidup yang lebih harmonis.</p>
+        <p class="g-hero-description">Dekat dengan Tuhan, sesama, dan alam. Mulai dari hal-hal sederhana.</p>
+        <a class="g-action" href="#g-explore">Jelajahi tiga hubungan <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="g-hero-visual">
+        <figure class="g-landscape">
+          <img id="g-hero-img" src="assets/images/bali-portrait.webp" alt="Ilustrasi AI sawah berundak, aliran air, dan pepohonan di Bali" width="1024" height="1536" fetchpriority="high">
+        </figure>
+        <figure class="g-hero-detail">
+          <img src="Prahyangan/premium_photo-1678304639537-d347f2aebc92.avif" alt="Payung upacara dan ukiran bangunan suci Bali dalam cahaya pagi" width="687" height="1031">
+        </figure>
+        <p class="g-photo-note">Alam dan tradisi, hidup berdampingan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-intro g-wrap g-reveal" aria-labelledby="g-intro-title">
+    <div>
+      <p class="g-kicker">MENGENAL FILOSOFINYA</p>
+      <h2 id="g-intro-title">Berakar di Bali.<br>Bermakna bagi kita.</h2>
+    </div>
+    <p>Tri Hita Karana merupakan konsep dalam budaya Bali yang mengajarkan <strong>tiga hubungan harmonis dalam kehidupan</strong>, yaitu hubungan manusia dengan Tuhan, sesama manusia, dan lingkungan.</p>
+  </section>
+
+  <section class="g-explore g-wrap g-reveal" id="g-explore" aria-labelledby="g-explore-title">
+   <div class="g-explore-intro">
+    <p class="g-kicker">TIGA HUBUNGAN HARMONIS</p>
+    <h2 id="g-explore-title">Tiga cara <br>merawat harmoni.</h2>
+    <p class="g-section-copy">Kenali maknanya. Temukan langkah kecil yang bisa kamu mulai hari ini.</p>
+    <div class="g-tabs" role="tablist" aria-label="Tiga pilar Tri Hita Karana">
+      <button class="g-tab" id="g-tab-0" role="tab" aria-selected="true" aria-controls="g-panel" type="button"><i class="fa-solid fa-hands-praying" aria-hidden="true"></i>Parahyangan</button>
+      <button class="g-tab" id="g-tab-1" role="tab" aria-selected="false" aria-controls="g-panel" type="button"><i class="fa-solid fa-people-group" aria-hidden="true"></i>Pawongan</button>
+      <button class="g-tab" id="g-tab-2" role="tab" aria-selected="false" aria-controls="g-panel" type="button"><i class="fa-solid fa-leaf" aria-hidden="true"></i>Palemahan</button>
+    </div>
+   </div>
+    <div class="g-panel" id="g-panel" role="tabpanel" aria-labelledby="g-tab-0" tabindex="0">
+      <figure class="g-panel-photo">
+        <img id="g-panel-img" src="Prahyangan/premium_photo-1677829177960-6f414a5393ce.avif" alt="Sesaji dan ukiran kayu di dalam bangunan suci Bali" width="600" height="900" loading="lazy">
+        <figcaption id="g-panel-caption">Ruang untuk doa dan rasa syukur.</figcaption>
+      </figure>
+      <div class="g-panel-body" id="g-panel-body">
+        <p class="g-relation" id="g-relation"></p>
+        <h3 id="g-panel-title"></h3>
+        <p class="g-panel-message" id="g-panel-message"></p>
+        <p class="g-panel-summary" id="g-panel-summary"></p>
+        <p class="g-example-label">Contoh dalam keseharian</p>
+        <ul id="g-examples"></ul>
+        <button class="g-read" id="g-read" type="button">Selami maknanya <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-school g-wrap g-reveal" id="g-school" aria-labelledby="g-school-title">
+    <div class="g-school-intro">
+      <p class="g-kicker">HARMONI DIMULAI DARI KITA</p>
+      <h2 id="g-school-title">Ruang belajar.<br>Ruang bertumbuh.</h2>
+      <p>Tri Hita Karana di sekolah hadir lewat kebiasaan kecil: berdoa, saling menghargai, dan merawat tempat kita belajar.</p>
+      <a class="g-action" href="#g-quiz">Uji pemahamanmu <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <ol class="g-school-list">
+      <li><span class="g-school-number" aria-hidden="true">01</span><div><h3>Awali dengan doa</h3><p>Berdoa sebelum belajar.</p><span class="g-school-pillar">Parahyangan</span></div></li>
+      <li><span class="g-school-number" aria-hidden="true">02</span><div><h3>Belajar saling menghargai</h3><p>Menghormati guru dan teman, serta bekerja sama.</p><span class="g-school-pillar">Pawongan</span></div></li>
+      <li><span class="g-school-number" aria-hidden="true">03</span><div><h3>Rawat ruang belajar kita</h3><p>Menjaga kebersihan kelas serta merawat lingkungan sekolah.</p><span class="g-school-pillar">Palemahan</span></div></li>
+    </ol>
+  </section>
+
+  <section class="g-quiz g-wrap g-reveal" id="g-quiz" aria-labelledby="g-quiz-title">
+    <div class="g-quiz-intro">
+      <div class="g-quiz-icon"><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i></div>
+      <h2 id="g-quiz-title">Sudah kenal<br>ketiganya?</h2>
+      <p>Tiga pertanyaan kecil. Bekal untuk membawa harmoni ke kehidupan sehari-hari.</p>
+    </div>
+    <div class="g-quiz-box">
+      <div class="g-quiz-meta">
+        <span id="g-step">Pertanyaan 1 dari 3</span>
+        <span id="g-score">Skor 0</span>
+      </div>
+      <div class="g-track" role="progressbar" aria-label="Soal dijawab" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" id="g-progress">
+        <div class="g-track-fill" id="g-progress-fill"></div>
+      </div>
+      <div id="g-question-body"></div>
+    </div>
+  </section>
+ </main>
+
+ <footer class="g-footer g-wrap" id="g-about">
+   <div><strong>Bali in Every Corner</strong><span>Mengenal budaya Bali melalui Tri Hita Karana.</span><small>Visual sawah dan kebersamaan merupakan ilustrasi berbantuan AI.</small></div>
+   <a href="https://whc.unesco.org/en/list/1194" target="_blank" rel="noopener noreferrer">Referensi konsep: UNESCO</a>
+ </footer>
+
+ <dialog id="g-dialog" aria-labelledby="g-dialog-title">
+   <div class="g-dialog-top">
+     <span id="g-dialog-relation"></span>
+     <button id="g-close" class="g-close" type="button" aria-label="Tutup materi">×</button>
+   </div>
+   <h2 id="g-dialog-title"></h2>
+   <div id="g-dialog-copy"></div>
+   <div class="g-practice">
+     <h3>Coba hari ini</h3>
+     <p id="g-practice"></p>
+   </div>
+ </dialog>
+
+ <!-- Floating Ambient Balinese Music Dock -->
+ <aside class="g-audio-dock" id="g-audio-dock" aria-label="Kontrol musik latar">
+   <div class="g-audio-bubble" id="g-audio-bubble" role="status">
+     <span>Dengarkan alunan Bali</span>
+     <button type="button" class="g-audio-bubble-close" id="g-audio-bubble-close" aria-label="Tutup petunjuk">×</button>
+   </div>
+   <button type="button" class="g-audio-btn" id="g-audio-btn" aria-label="Putar musik latar Bali" aria-pressed="false" data-playing="false">
+     <span class="g-audio-disc" aria-hidden="true">
+       <svg class="g-icon-play" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+         <path d="M8 5v14l11-7z"/>
+       </svg>
+       <svg class="g-icon-pause" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+         <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+       </svg>
+     </span>
+     <span class="g-audio-equalizer" aria-hidden="true">
+       <span class="g-eq-bar"></span>
+       <span class="g-eq-bar"></span>
+       <span class="g-eq-bar"></span>
+       <span class="g-eq-bar"></span>
+     </span>
+     <span class="g-audio-label" id="g-audio-label">Musik Bali</span>
+   </button>
+   <audio id="g-audio-el" preload="none" loop src="assets/audio/tri-hita-karana.mp3"></audio>
+ </aside>
+</div>
+
+  <!-- Main Application Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
+
