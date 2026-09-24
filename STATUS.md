@@ -119,3 +119,9 @@
 - Retry listeners stop after successful playback or explicit music-control use, so pausing is respected on subsequent interactions. Existing play/pause control retained.
 - Versioned production script URL to v4. scripts/verify-autoplay.cjs passed in Edge with both allowed and gesture-required autoplay policies, including fallback and persistent pause.
 - iPhone Safari can require user interaction; autoplay cannot override browser policy.
+
+## 2026-09-24: Topic hub preview only
+- Created home-preview.html and css/home-preview.css: ivory/forest editorial topic selector with one live Tri Hita Karana card and a clearly inactive future-topic placeholder.
+- Created topic-preview.html from the current topic page with an explicit Semua topik return link. Homepage contains no lesson content, quiz or audio; scrolling cannot enter a topic.
+- Verified 320/390/430/1440px without overflow, topic navigation and return, no JavaScript errors; visually reviewed assets/previews/home-mobile.png.
+- Preview only, not applied to index.html or pushed. Await user review and final topic list.
