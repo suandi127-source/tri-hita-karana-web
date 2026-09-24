@@ -3,8 +3,8 @@
 > **Last Updated**: 2026-09-24 WITA
 > **Current Lead Agent**: OpenAI Codex
 > **Previous Agent**: Morty (Hermes Agent)
-> **Status**: ✅ Portrait editorial redesign and motion completed locally; ready for review
-> **Previously Published Version**: https://suandi127-source.github.io/tri-hita-karana-web/
+> **Status**: ✅ Portrait redesign successfully pushed to GitHub main
+> **GitHub Pages**: https://suandi127-source.github.io/tri-hita-karana-web/
 
 ---
 
@@ -26,9 +26,9 @@
 
 ## 📌 Active Backlog / Next Steps for Incoming Agent
 
-1. **Review and publish this update**:
+1. **Review the published update**:
    * The new layout is available at `http://127.0.0.1:4182`.
-   * This update has not been pushed or deployed. Review before publishing.
+   * Implementation commits 60ee829 and fc1dfae were pushed to GitHub main on 2026-09-24. GitHub Pages deployment runs separately.
    * Parahyangan uses a supplied portrait temple photograph; Pawongan and Palemahan use new 1024 × 1536 AI illustrations. See assets/images/GENERATED.md for final paths and prompts.
    * All displayed image sources are portrait-oriented and their display widths stay below their natural pixel widths.
 2. **Ambient Sound / Audio Experience**:
@@ -64,3 +64,11 @@
 - Consolidated the stylesheet, removing layered overrides. Added staggered hero text, separate image entrances, gentle image settling, sequential school-item reveals, and retained animated tab/dialog/quiz transitions. All motion respects prefers-reduced-motion.
 - Verification passed: portrait source/display proportions without width upscaling, all assets loaded, vertical/horizontal keyboard tabs, dialogs and focus return, quiz correct/incorrect/retry, mobile menu, no overflow at 320/390/768/1024/1440 px, scroll reveals, and reduced-motion behavior. Desktop/mobile/dark screenshots refreshed and visually reviewed. Lighthouse remains unavailable; no performance score is claimed.
 - Local preview remains http://127.0.0.1:4182. Not pushed or published. Next: user review, then publish if requested.
+
+## 2026-09-24: GitHub push completed
+
+- User authorized pushing the completed layout and portrait redesign to main on suandi127-source/tri-hita-karana-web.
+- Implementation commits 60ee829 and fc1dfae successfully pushed via HTTPS after the user completed GitHub device authorization.
+- SSH remains unconfigured locally (host key and agent identity unavailable). The bundled default HTTPS helper opens a selector; the working push used the explicit Git Credential Manager executable under the bundled Git installation.
+- GitHub Pages builds automatically from the configured main branch. A successful Git push alone does not confirm completion of that build.
+- Next: check the published site after the Pages deployment completes; further design changes follow user feedback.
