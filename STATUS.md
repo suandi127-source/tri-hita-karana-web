@@ -131,3 +131,9 @@
 - Second card is explicitly a coming-soon placeholder, not an invented topic. Only Mulai jelajahi enters a separate lesson page; home contains no lesson content.
 - Checked 320/390/430/1440px, previous/next, keyboard, synthetic swipe handler and topic/return navigation. Visually inspected home-clean-mobile.png. No physical-device swipe test performed.
 - Preview only; production unchanged and not pushed.
+
+## 2026-09-24: Publish approved topic hub
+- Promoted clean interactive hub to index.html with css/home.css; Tri Hita Karana now lives at tri-hita-karana.html with a Semua topik return link.
+- Homepage contains topic selection only, no lesson or audio. Coming-soon card remains inactive. Existing quiz and autoplay are retained on the topic page.
+- Adjusted mobile hero viewport allowance for added return navigation and retargeted topic/autoplay verification scripts to the new URL.
+- Verified production homepage card navigation and return. Publishing to GitHub main on explicit user request.
