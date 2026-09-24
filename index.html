@@ -131,6 +131,32 @@
      <p id="g-practice"></p>
    </div>
  </dialog>
+
+ <!-- Floating Ambient Balinese Music Dock -->
+ <aside class="g-audio-dock" id="g-audio-dock" aria-label="Kontrol musik latar">
+   <div class="g-audio-bubble" id="g-audio-bubble" role="status">
+     <span>Dengarkan alunan Bali</span>
+     <button type="button" class="g-audio-bubble-close" id="g-audio-bubble-close" aria-label="Tutup petunjuk">×</button>
+   </div>
+   <button type="button" class="g-audio-btn" id="g-audio-btn" aria-label="Putar musik latar Bali" aria-pressed="false" data-playing="false">
+     <span class="g-audio-disc" aria-hidden="true">
+       <svg class="g-icon-play" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+         <path d="M8 5v14l11-7z"/>
+       </svg>
+       <svg class="g-icon-pause" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+         <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+       </svg>
+     </span>
+     <span class="g-audio-equalizer" aria-hidden="true">
+       <span class="g-eq-bar"></span>
+       <span class="g-eq-bar"></span>
+       <span class="g-eq-bar"></span>
+       <span class="g-eq-bar"></span>
+     </span>
+     <span class="g-audio-label" id="g-audio-label">Musik Bali</span>
+   </button>
+   <audio id="g-audio-el" preload="none" loop src="assets/audio/tri-hita-karana.mp3"></audio>
+ </aside>
 </div>
 
   <!-- Main Application Script -->

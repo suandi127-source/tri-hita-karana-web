@@ -19,7 +19,8 @@
 | **3 Pillars Tabs** | Done | Responsive vertical/horizontal tablist, portrait photos, concise meanings and examples, and animated content transitions. |
 | **Deep-Dive Dialog** | Done | Accessible native `<dialog>` modal showing philosophical backstory, practical daily actions, and smooth entrance/exit. |
 | **Interactive Quiz** | Done | 3 questions with real-time progress bar, instant feedback, scoring, and retry functionality. |
-| **Dev Server** | Done | Zero-dependency `server.cjs` serving on port `4182` with proper MIME types. |
+| **Ambient Sound & Music** | Done | Balinese gamelan/ambient music player (`assets/audio/tri-hita-karana.mp3`) with floating dock, animated equalizer, volume fade-in, HTTP Range streaming support, and mobile optimization. |
+| **Dev Server** | Done | Zero-dependency `server.cjs` serving on port `4182` with proper MIME types & HTTP Range 206 streaming. |
 | **Multi-Agent Protocol** | Done | `AGENTS.md` and `STATUS.md` established for AG, Codex, and Hermes. |
 
 ---
@@ -27,15 +28,11 @@
 ## 📌 Active Backlog / Next Steps for Incoming Agent
 
 1. **Review the published update**:
-   * The new layout is available at `http://127.0.0.1:4182`.
-   * Implementation commits 60ee829 and fc1dfae were pushed to GitHub main on 2026-09-24. GitHub Pages deployment runs separately.
-   * Parahyangan uses a supplied portrait temple photograph; Pawongan and Palemahan use new 1024 × 1536 AI illustrations. See assets/images/GENERATED.md for final paths and prompts.
-   * All displayed image sources are portrait-oriented and their display widths stay below their natural pixel widths.
-2. **Ambient Sound / Audio Experience**:
-   * Optional toggle for gentle Balinese nature/rindik sound to enhance immersion.
-3. **Bilingual Support (ID / EN)**:
+   * The new layout and ambient music are available at `http://127.0.0.1:4182` and GitHub Pages.
+   * Implementation commits pushed to GitHub main on 2026-09-24.
+2. **Bilingual Support (ID / EN)**:
    * Add a language switch button in the header so international visitors can read about Tri Hita Karana.
-4. **PWA / Offline Support**:
+3. **PWA / Offline Support**:
    * Add `manifest.json` and a simple Service Worker so the website can be installed on mobile devices.
 
 ---
@@ -43,6 +40,7 @@
 ## 📜 Agent Activity Log
 * **2026-09-23 (OpenAI Codex)**: Explored initial Tri Hita Karana concepts, crafted forest green + lime motion prototype, tested with Playwright.
 * **2026-09-23 (Antigravity)**: Extracted from Codex sandbox to clean project directory; modularized into `index.html`, `css/style.css`, `js/app.js`, `assets/`; implemented `server.cjs`; configured universal `AGENTS.md` and `STATUS.md`; initialized Git repo.
+* **2026-09-24 (Antigravity)**: Integrated user-provided Balinese ambient music (`assets/audio/tri-hita-karana.mp3`). Implemented floating audio dock with speech bubble onboarding, interactive play/pause, dancing equalizer bars, smooth volume fade ramp (0.65), full mobile touch support, and HTTP Range 206 streaming in `server.cjs`. Verified with automated test suite and published to GitHub.
 
 ## 2026-09-24: Bali in Every Corner content and layout
 
@@ -73,3 +71,10 @@
 - **Micro-fixes**: Fixed spacing in `index.html` where "Tiga cara merawat harmoni" previously merged words on mobile when `<br>` was hidden.
 - **Verification**: Verified at 320px, 360px, 390px, and 412px; zero horizontal overflow; HTTP 200 on port 4182. Saved mobile preview to `assets/previews/` and generated walkthrough artifact.
 - **Next Steps**: Await user feedback on mobile Page 1 before proceeding to subsequent sections (e.g. tabs/intro).
+
+## 2026-09-24: In-Chat Mobile Review Simulator & Visual Audit
+
+- **Simulator Created**: Built an interactive Generative UI mobile preview widget (`mobile_preview.html`) featuring a smartphone frame (iPhone 14/15 390x844px), section quick-switchers, scrollable full-page snapshot, and a live interactive iframe connected to `http://localhost:4182`.
+- **Comprehensive Visual Audit**: Generated high-resolution viewport captures for Hero (above the fold), 3 Pilar tabs, School section, Quiz box, Mobile menu drawer, and Dark Mode in `assets/previews/`.
+- **Review Artifact**: Documented mobile ergonomics, touch targets, and visual checkpoints in `mobile_design_review.md`.
+

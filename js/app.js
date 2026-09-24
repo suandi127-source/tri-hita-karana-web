@@ -43,4 +43,17 @@
  if('IntersectionObserver'in window&&!reduced.matches){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('g-pending');observer.unobserve(entry.target);}});},{threshold:.06});root.querySelectorAll('.g-reveal, .g-school-list li').forEach(n=>{n.classList.add('g-reveal','g-pending');observer.observe(n);});}
  function updateMotion(){root.style.colorScheme=design.appearance==='auto'?'':design.appearance;root.style.setProperty('--g-duration',design.motion==='off'?'0ms':design.motion==='gentle'?'450ms':'650ms');root.querySelectorAll('.g-pending').forEach(n=>n.classList.remove('g-pending'));root.dataset.motion=design.motion;if(design.motion==='off')root.getAnimations({subtree:true}).forEach(a=>a.cancel());}
  if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:updateMotion});tweak.addSelect(design,'appearance',{label:'Tampilan hijau',options:[{label:'Ikuti perangkat',value:'auto'},{label:'Hijau terang',value:'light'},{label:'Hijau hutan gelap',value:'dark'}]});tweak.addSelect(design,'motion',{label:'Gerakan',options:[{label:'Mengalir',value:'flow'},{label:'Lebih tenang',value:'gentle'},{label:'Tanpa animasi',value:'off'}]});}
+  // Ambient Balinese Music Controller
+  const audioDock=find('g-audio-dock'),audioBtn=find('g-audio-btn'),audioBubble=find('g-audio-bubble'),audioBubbleClose=find('g-audio-bubble-close'),audioLabel=find('g-audio-label'),audio=find('g-audio-el');
+  let fadeTimer=null;
+  function setVolume(target,duration=500,onDone){if(!audio)return;clearInterval(fadeTimer);const stepMs=30,steps=Math.max(1,duration/stepMs),diff=(target-audio.volume)/steps;fadeTimer=setInterval(()=>{const next=audio.volume+diff;if((diff>0&&next>=target)||(diff<0&&next<=target)||diff===0){audio.volume=Math.max(0,Math.min(1,target));clearInterval(fadeTimer);if(onDone)onDone();}else{audio.volume=Math.max(0,Math.min(1,next));}},stepMs);}
+  function updateAudioUI(playing){if(!audioBtn)return;audioBtn.dataset.playing=String(playing);audioBtn.setAttribute('aria-pressed',String(playing));audioBtn.setAttribute('aria-label',playing?'Jeda musik latar Bali':'Putar musik latar Bali');if(audioLabel)audioLabel.textContent=playing?'Alunan Bali':'Musik Bali';}
+  function dismissBubble(){if(audioBubble){audioBubble.classList.add('g-hidden');try{sessionStorage.setItem('thk_audio_bubble_dismissed','1');}catch(_){}}}
+  async function playAudio(){dismissBubble();if(!audio)return;try{audio.volume=0;const promise=audio.play();if(promise!==undefined){await promise;updateAudioUI(true);setVolume(.65,700);}}catch(err){console.log('Audio playback waiting for user action:',err);updateAudioUI(false);}}
+  function pauseAudio(){if(!audio)return;setVolume(0,350,()=>{audio.pause();updateAudioUI(false);});}
+  function toggleAudio(){if(!audio)return;if(audio.paused)playAudio();else pauseAudio();}
+  if(audioBtn)audioBtn.addEventListener('click',toggleAudio);
+  if(audioBubble){audioBubble.addEventListener('click',e=>{if(e.target===audioBubbleClose||e.target.closest('#g-audio-bubble-close')){e.stopPropagation();dismissBubble();}else{toggleAudio();}});}
+  if(audio){audio.addEventListener('play',()=>updateAudioUI(true));audio.addEventListener('pause',()=>{if(!audio.seeking)updateAudioUI(false);});audio.addEventListener('ended',()=>updateAudioUI(false));}
+  try{if(sessionStorage.getItem('thk_audio_bubble_dismissed')==='1')dismissBubble();else setTimeout(dismissBubble,6500);}catch(_){setTimeout(dismissBubble,6500);}
 })();
