@@ -137,3 +137,9 @@
 - Homepage contains topic selection only, no lesson or audio. Coming-soon card remains inactive. Existing quiz and autoplay are retained on the topic page.
 - Adjusted mobile hero viewport allowance for added return navigation and retargeted topic/autoplay verification scripts to the new URL.
 - Verified production homepage card navigation and return. Publishing to GitHub main on explicit user request.
+
+## 2026-09-24: Persistent navigation and shared music
+- Added high-contrast sticky Semua topik control and music controls in a shared top bar on homepage and topic page. Updated current review pages to match.
+- Extracted music into js/music.js. Playback preference and time persist across full-page navigation via sessionStorage; paused music stays paused. Browser autoplay restrictions still apply; full-page transitions may briefly interrupt audio.
+- Verified sticky bar at quiz depth, single audio player, paused state across pages, resume at saved position, and responsive widths 320/390/1440. Screenshot inspected.
+- Interpreted user's 'lagi' as 'lagu' in context and implemented music globally. Publishing under standing authorization.

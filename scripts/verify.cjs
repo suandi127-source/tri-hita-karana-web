@@ -11,7 +11,11 @@ const { chromium } = require('playwright');
     const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
-    page.on('requestfailed', request => errors.push(request.url()));
+    page.on('requestfailed', request => {
+      // Reloading cancels the previous page's in-flight media stream.
+      if (request.url().endsWith('.mp3') && request.failure()?.errorText === 'net::ERR_ABORTED') return;
+      errors.push(request.url());
+    });
     page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
     assert.equal((await page.goto(process.env.PREVIEW_URL || 'http://127.0.0.1:4182/tri-hita-karana.html', { waitUntil: 'networkidle' })).status(), 200);
     assert.equal(await page.title(), 'Bali in Every Corner | Tri Hita Karana');
