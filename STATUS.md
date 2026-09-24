@@ -101,3 +101,8 @@
 - Added requested MINI QUIZ introduction and LET'S TAKE ACTION closing message, including Ajegang budaya Bali text.
 - Updated scripts/verify.cjs for five questions and four options. Full browser checks passed for keyboard, dialogs, quiz, menu, light/dark, 320–1440px, reveals and reduced motion. Additional full quiz checks passed at 320/360/390/430px, including progress, retry and long-option overflow. Quiz/closing screenshots visually inspected.
 - User explicitly approved implementation and push to GitHub main; release commit follows this entry.
+
+## 2026-09-24: Footer copy cleanup
+- Removed the visible AI-assistance footer sentence from production and both review concepts at user request.
+- Recommended an inline music control immediately below the hero; placement remains unchanged pending user's choice.
+- Verified served homepage no longer contains the removed sentence. Continuing the user's authorized GitHub push workflow.
