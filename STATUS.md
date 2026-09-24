@@ -65,10 +65,11 @@
 - Verification passed: portrait source/display proportions without width upscaling, all assets loaded, vertical/horizontal keyboard tabs, dialogs and focus return, quiz correct/incorrect/retry, mobile menu, no overflow at 320/390/768/1024/1440 px, scroll reveals, and reduced-motion behavior. Desktop/mobile/dark screenshots refreshed and visually reviewed. Lighthouse remains unavailable; no performance score is claimed.
 - Local preview remains http://127.0.0.1:4182. Not pushed or published. Next: user review, then publish if requested.
 
-## 2026-09-24: GitHub push completed
+## 2026-09-24: Mobile Page 1 (Hero) Layout Redesign
 
-- User authorized pushing the completed layout and portrait redesign to main on suandi127-source/tri-hita-karana-web.
-- Implementation commits 60ee829 and fc1dfae successfully pushed via HTTPS after the user completed GitHub device authorization.
-- SSH remains unconfigured locally (host key and agent identity unavailable). The bundled default HTTPS helper opens a selector; the working push used the explicit Git Credential Manager executable under the bundled Git installation.
-- GitHub Pages builds automatically from the configured main branch. A successful Git push alone does not confirm completion of that build.
-- Next: check the published site after the Pages deployment completes; further design changes follow user feedback.
+- **User Feedback Addressed**: Mobile layout for page 1 was previously a long vertical stack with oversized typography where the photo was buried below the fold and disconnected from the header/title.
+- **Redesign Implemented**: Replaced the 1-column mobile stack with a responsive 2-column split layout (`1.12fr 0.88fr`) matching the desktop composition.
+- **Visual Harmony**: On mobile screens (320px–430px), visitors now immediately see the navigation header, kicker, title (`Tri Hita Karana.`), subtitle, description, CTA button, and the layered portrait visual (rice terrace arch + temple photo badge) together on the initial screen without scrolling.
+- **Micro-fixes**: Fixed spacing in `index.html` where "Tiga cara merawat harmoni" previously merged words on mobile when `<br>` was hidden.
+- **Verification**: Verified at 320px, 360px, 390px, and 412px; zero horizontal overflow; HTTP 200 on port 4182. Saved mobile preview to `assets/previews/` and generated walkthrough artifact.
+- **Next Steps**: Await user feedback on mobile Page 1 before proceeding to subsequent sections (e.g. tabs/intro).
