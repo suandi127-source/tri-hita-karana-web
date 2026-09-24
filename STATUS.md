@@ -150,7 +150,8 @@
 - Verified sticky position, return link, target height and no overflow at 320/390/1440px; screenshot visually inspected.
 
 ## 2026-09-24: Fix Vercel static deployment configuration
-- Identified cause of "404 Not Found: /index.html" on Vercel deployment: package.json had "main": "server.cjs" and "start": "node server.cjs", triggering Vercel's Node.js Serverless runtime where local static files weren't included in the lambda trace.
-- Removed "main" and "start" scripts from package.json so Vercel serves the project directly as a high-performance static website from its CDN. Retained "dev": "node server.cjs" for local development.
-- Added vercel.json with "cleanUrls": true for clean extensionless navigation.
+- Identified cause of "404 Not Found: /index.html" on Vercel deployment: Vercel automatically detects root `server.cjs` and spins it up as a Node.js Serverless Function that intercepts all requests without bundled static files.
+- Moved root `server.cjs` to `scripts/server.cjs` and updated `BASE_DIR` and `package.json` dev script so local preview works identical, while leaving root clean of server entry points.
+- Vercel now deploys directly as a pure Edge CDN static website. Added `vercel.json` with `"cleanUrls": true`.
+
 

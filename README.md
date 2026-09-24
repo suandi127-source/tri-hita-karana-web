@@ -16,7 +16,7 @@ Sebuah website interaktif yang memperkenalkan dan mengeksplorasi filosofi kearif
 ```bash
 npm run dev
 # atau
-node server.cjs
+node scripts/server.cjs
 ```
 Buka browser di **[http://localhost:4182](http://localhost:4182)**.
 
@@ -32,7 +32,7 @@ python -m http.server 4182
 * `css/style.css` — Tema hijau hutan, animasi, dan responsivitas mobile/desktop.
 * `js/app.js` — Logika tab pilar, modal dialog, dan kuis interaktif.
 * `assets/` — Gambar ilustrasi lanskap, preview, dan foto budaya.
-* `server.cjs` — Server statis lokal ringan (port 4181).
+* `scripts/server.cjs` — Server statis lokal ringan (port 4182).
 * `AGENTS.md` — Panduan standar bagi AI coding assistant (Antigravity, Codex, Hermes).
 * `STATUS.md` — Log status dan catatan handoff antar-agen.
 
