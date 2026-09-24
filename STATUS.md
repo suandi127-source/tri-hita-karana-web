@@ -125,3 +125,9 @@
 - Created topic-preview.html from the current topic page with an explicit Semua topik return link. Homepage contains no lesson content, quiz or audio; scrolling cannot enter a topic.
 - Verified 320/390/430/1440px without overflow, topic navigation and return, no JavaScript errors; visually reviewed assets/previews/home-mobile.png.
 - Preview only, not applied to index.html or pushed. Await user review and final topic list.
+
+## 2026-09-24: Cleaner interactive homepage preview
+- Replaced dense topic hub with a short heading and one large visual topic card at a time. Added previous/next controls, keyboard arrows, manual swipe handling and a live position counter; no auto-rotation.
+- Second card is explicitly a coming-soon placeholder, not an invented topic. Only Mulai jelajahi enters a separate lesson page; home contains no lesson content.
+- Checked 320/390/430/1440px, previous/next, keyboard, synthetic swipe handler and topic/return navigation. Visually inspected home-clean-mobile.png. No physical-device swipe test performed.
+- Preview only; production unchanged and not pushed.
