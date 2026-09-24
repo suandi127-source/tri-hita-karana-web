@@ -162,3 +162,9 @@
 - Autoplay is attempted on entry; browser-blocked playback retries on gestures in either home or topic. Explicit pause is respected within the session. Fresh page entry attempts autoplay as requested.
 - scripts/verify-global-music.cjs passed under both allowed and blocked autoplay policies: identical audio element, currentTime >=20 across transitions, zero pause events, history, topic interaction and manual pause. Physical iPhone not tested; audible autoplay remains browser-controlled.
 - Topic controls/quiz remain in the existing zero-dependency app; site remains static-host compatible.
+
+## 2026-09-24: Fix phone topic frame dimensions
+- User screenshot shows default approximately 300x150 iframe dimensions, consistent with missing/stale frame CSS; cache cause is inferred, not confirmed on physical device.
+- Added critical full-width/borderless sizing directly when creating the persistent frame, with height measured from viewport minus actual global bar. Resizes with viewport and bar changes.
+- Versioned navigation and global stylesheet URLs so browsers request updated assets.
+- scripts/verify-frame.cjs strips frame CSS deliberately and verifies full viewport width/remaining height at 320/390/1440 widths and changing heights; screenshot inspected. Global music tests still pass without pauses/restarts in allowed and blocked autoplay modes.

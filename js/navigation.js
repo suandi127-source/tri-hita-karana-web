@@ -1,6 +1,12 @@
 (()=>{
  const home=document.querySelector('.shell'),frame=document.createElement('iframe');
  frame.title='Materi Tri Hita Karana';frame.className='topic-frame';frame.hidden=true;
+ // Critical sizing must also work when a phone still has an older stylesheet cached.
+ frame.style.cssText='display:block;width:100%;border:0;outline:none;background:#f5f1e8';
+ const bar=document.querySelector('.site-bar');
+ function fitFrame(){frame.style.height=Math.max(0,innerHeight-bar.getBoundingClientRect().height)+'px';}
+ addEventListener('resize',fitFrame);
+ new ResizeObserver(fitFrame).observe(bar);
  frame.addEventListener('load',()=>{
   const doc=frame.contentDocument;
   doc.addEventListener('click',()=>window.startBaliMusic?.());
@@ -9,7 +15,7 @@
  document.body.append(frame);
  function render(){
   const topic=new URLSearchParams(location.search).get('topic')==='tri-hita-karana';
-  home.hidden=topic;frame.hidden=!topic;document.body.classList.toggle('topic-open',topic);
+  home.hidden=topic;frame.hidden=!topic;document.body.classList.toggle('topic-open',topic);fitFrame();
   if(topic&&!frame.hasAttribute('src'))frame.src='tri-hita-karana.html?embedded=1';
   document.title=topic?'Tri Hita Karana | Bali in Every Corner':'Bali — Pilih ceritamu';
  }
