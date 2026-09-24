@@ -106,3 +106,10 @@
 - Removed the visible AI-assistance footer sentence from production and both review concepts at user request.
 - Recommended an inline music control immediately below the hero; placement remains unchanged pending user's choice.
 - Verified served homepage no longer contains the removed sentence. Continuing the user's authorized GitHub push workflow.
+
+## 2026-09-24: iPhone viewport fit and visible music control
+- Used supplied iPhone screenshot to address excessive hero height and CTA falling behind the visible browser viewport.
+- Reduced mobile header/title/spacing and replaced fixed hero minimum with small-viewport-aware sizing; content can still grow for smaller screens or larger text.
+- Moved existing audio control into hero below CTA on mobile; retained desktop floating placement. Added clear Putar/Jeda alunan Bali labels, matching ivory treatment and visible focus style. No autoplay.
+- Verified both controls fit 390x664 and 390x670 browser viewports; checked 320/430 widths and actual audio playback/pause in Edge. Screenshot visually inspected. Physical iPhone Safari has not been tested.
+- Added viewport-fit regression to scripts/verify.cjs. Production CSS/JS URLs versioned for refreshed phone loads. User's standing push authorization applies.

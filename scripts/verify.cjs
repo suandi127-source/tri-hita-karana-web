@@ -69,6 +69,12 @@ const { chromium } = require('playwright');
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `Overflow at ${width}px`);
       if (filename) await page.screenshot({ path: `assets/previews/${filename}`, fullPage: true });
     }
+    await page.setViewportSize({ width: 390, height: 670 });
+    await page.evaluate(() => scrollTo(0, 0));
+    for (const selector of ['.g-hero .g-action', '#g-audio-btn']) {
+      const box = await page.locator(selector).boundingBox();
+      assert.ok(box.y >= 0 && box.y + box.height <= 670, selector + ' must fit with browser toolbars');
+    }
     await page.setViewportSize({ width: 390, height: 844 });
     await page.locator('#g-menu').click();
     assert.equal(await page.locator('#g-menu').getAttribute('aria-expanded'), 'true');
