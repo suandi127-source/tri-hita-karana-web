@@ -87,3 +87,10 @@
 - Verified HTTP/assets without errors, no horizontal overflow at all four sizes, pillar switching, dialog/Escape, quiz feedback, menu, and review controls. Visually inspected review screenshot; captures saved as assets/previews/mobile-concept-*.png.
 - Preview: http://127.0.0.1:4182/mobile-review.html. Main page and production CSS/JS untouched; not published.
 - Pending: user's review of hierarchy, image cropping, and music placement before implementing final mobile redesign.
+
+## 2026-09-24: Editorial mobile concept revision
+- Responded to user feedback that the first concept lacked elegance and looked unfinished.
+- Revised review-only concept with a full-bleed landscape hero, cream serif title, ivory/forest palette, restrained corners, underlined tabs, and consistent editorial headings and school numbers.
+- Preserved first concept in mobile-concept-v1.html and css/mobile-concept-v1.css; review now compares revision 2 against revision 1.
+- Verified no overflow at 320/360/390/430px; no asset or script errors; tabs, dialog/Escape, quiz feedback and comparison work. Hero and pillar screenshots visually inspected.
+- Production page remains unchanged; awaiting review of revised aesthetics. Preview remains /mobile-review.html.
