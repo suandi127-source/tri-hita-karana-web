@@ -44,11 +44,12 @@ const { chromium } = require('playwright');
     await page.keyboard.press('ArrowUp');
     assert.equal(await page.locator('#g-tab-0').getAttribute('aria-selected'), 'true');
 
-    for (const answer of [1, 0, 1]) {
+    for (const answer of [1, 1, 2, 0, 2]) {
+      assert.equal(await page.locator('.g-answer').count(), 4);
       await page.locator('.g-answer').nth(answer).click();
       await page.locator('.g-next').click();
     }
-    assert.equal(await page.locator('.g-result-number').innerText(), '3 / 3');
+    assert.equal(await page.locator('.g-result-number').innerText(), '5 / 5');
     await page.getByRole('button', { name: 'Ulangi kuis' }).click();
     await page.locator('.g-answer').nth(0).click();
     assert.match(await page.locator('.g-feedback').innerText(), /Belum tepat/);

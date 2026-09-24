@@ -9,10 +9,62 @@
    {name:'Palemahan',relation:'Hubungan manusia dengan lingkungan',title:'Palemahan',message:'Merawat alam, merawat kehidupan.',summary:'Hubungan harmonis antara manusia dengan lingkungan.',examples:['Menjaga kebersihan','Membuang sampah pada tempatnya','Merawat tanaman','Menjaga alam'],image:'assets/images/bali-portrait.webp',alt:'Ilustrasi AI sawah berundak dengan aliran air dan pepohonan di Bali',caption:'Alam yang dirawat, kehidupan yang terjaga.',position:'50% 55%',paragraphs:['Palemahan mengajak manusia menjaga hubungan yang harmonis dengan lingkungan. Alam mendukung kehidupan melalui air, pangan, udara, dan ruang untuk tumbuh.','Menghemat sumber daya serta merawat lingkungan dapat dimulai dari rumah. Kebiasaan kecil yang dilakukan bersama membantu menjaga keseimbangan.'],practice:'Bawa botol minum sendiri dan perhatikan satu kebiasaan yang bisa mengurangi pemborosan air hari ini.'}
   ],
   quiz:[
-   {question:'Bergotong royong bersama tetangga terutama mencerminkan hubungan apa?',options:['Manusia dengan Tuhan','Manusia dengan sesama','Manusia dengan alam'],correct:1,explanation:'Kerja sama antarmanusia mencerminkan Pawongan. Jika dilakukan untuk merawat lingkungan, kegiatan yang sama juga mendukung Palemahan.'},
-   {question:'Pilar apa yang menekankan hubungan spiritual manusia dengan Tuhan?',options:['Parahyangan','Pawongan','Palemahan'],correct:0,explanation:'Parahyangan berfokus pada hubungan manusia dengan Tuhan, termasuk melalui doa dan rasa syukur.'},
-   {question:'Kebiasaan mana yang paling langsung mencerminkan Palemahan?',options:['Mendengarkan cerita teman','Menghemat penggunaan air','Meluangkan waktu untuk berdoa'],correct:1,explanation:'Menggunakan air dengan bijak merupakan salah satu cara merawat lingkungan, sesuai nilai Palemahan.'}
-  ]
+  {
+    "question": "Apa yang dimaksud dengan Tri Hita Karana?",
+    "options": [
+      "Tiga jenis upacara dalam agama Hindu",
+      "Tiga hubungan harmonis dalam kehidupan",
+      "Tiga aturan dalam kehidupan masyarakat Bali",
+      "Tiga tradisi utama masyarakat Bali"
+    ],
+    "correct": 1,
+    "explanation": "Tri Hita Karana mengajarkan tiga hubungan harmonis: dengan Tuhan, sesama manusia, dan lingkungan."
+  },
+  {
+    "question": "Sikap menghormati dan membantu teman merupakan contoh penerapan…",
+    "options": [
+      "Parahyangan",
+      "Pawongan",
+      "Palemahan",
+      "Parahyangan dan Palemahan"
+    ],
+    "correct": 1,
+    "explanation": "Menghormati dan membantu teman mencerminkan Pawongan, yaitu hubungan harmonis dengan sesama manusia."
+  },
+  {
+    "question": "Menjaga kebersihan lingkungan sekolah termasuk penerapan…",
+    "options": [
+      "Parahyangan",
+      "Pawongan",
+      "Palemahan",
+      "Semua benar"
+    ],
+    "correct": 2,
+    "explanation": "Menjaga kebersihan lingkungan sekolah mencerminkan Palemahan, yaitu hubungan harmonis dengan lingkungan."
+  },
+  {
+    "question": "Berdoa sebelum memulai pembelajaran merupakan contoh…",
+    "options": [
+      "Parahyangan",
+      "Pawongan",
+      "Palemahan",
+      "Pawongan dan Palemahan"
+    ],
+    "correct": 0,
+    "explanation": "Berdoa sebelum belajar mencerminkan Parahyangan, yaitu hubungan harmonis dengan Tuhan."
+  },
+  {
+    "question": "Manakah tindakan yang paling tepat untuk menerapkan Tri Hita Karana di sekolah?",
+    "options": [
+      "Menjaga kebersihan tetapi tidak peduli dengan teman",
+      "Hanya mengikuti kegiatan keagamaan",
+      "Menghormati sesama, menjaga lingkungan, dan menjalankan kewajiban kepada Tuhan",
+      "Mengikuti kegiatan sekolah hanya untuk mendapatkan nilai"
+    ],
+    "correct": 2,
+    "explanation": "Ketiga hubungan dijalankan bersama: menghormati sesama, merawat lingkungan, dan menjalankan kewajiban kepada Tuhan."
+  }
+]
  };
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const design={motion:'flow',appearance:'auto'};
@@ -36,7 +88,7 @@
  nav.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('g-open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu';menu.focus();}});
  root.querySelectorAll('a[href^="#g-"]').forEach(link=>link.addEventListener('click',e=>{const target=root.querySelector(link.getAttribute('href'));if(!target)return;e.preventDefault();nav.classList.remove('g-open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu';if(!target.hasAttribute('tabindex'))target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({behavior:reduced.matches||design.motion==='off'?'instant':'smooth',block:'start'});}));
  let step=0,score=0,answered=false;
- function updateProgress(done){find('g-step').textContent=step<data.quiz.length?'Pertanyaan '+(step+1)+' dari '+data.quiz.length:'Kuis selesai';find('g-score').textContent='Skor '+score;find('g-progress').setAttribute('aria-valuenow',done);find('g-progress-fill').style.transform='scaleX('+(done/data.quiz.length)+')';}
+ function updateProgress(done){find('g-step').textContent=step<data.quiz.length?'Pertanyaan '+(step+1)+' dari '+data.quiz.length:'Kuis selesai';find('g-score').textContent='Skor '+score;find('g-progress').setAttribute('aria-valuemax',data.quiz.length);find('g-progress').setAttribute('aria-valuenow',done);find('g-progress-fill').style.transform='scaleX('+(done/data.quiz.length)+')';}
  function renderQuestion(withMotion=false){answered=false;const q=data.quiz[step];updateProgress(step);const body=find('g-question-body');body.replaceChildren();const heading=element('h3','g-question',q.question),answers=element('div','g-answers'),feedback=element('p','g-feedback');feedback.hidden=true;feedback.setAttribute('role','status');feedback.setAttribute('aria-live','polite');const next=element('button','g-action g-next',step===data.quiz.length-1?'Lihat hasil':'Pertanyaan berikutnya');next.type='button';next.disabled=true;next.append(icon('arrow-right'));q.options.forEach((text,i)=>{const b=element('button','g-answer');b.type='button';b.append(element('span','g-answer-letter',String.fromCharCode(65+i)),element('span','',text));b.addEventListener('click',()=>{if(answered)return;answered=true;const correct=i===q.correct;if(correct)score++;Array.from(answers.children).forEach((option,index)=>{option.disabled=true;if(index===q.correct){option.dataset.state='correct';option.append(element('span','g-answer-status','✓ Benar'));}else if(index===i){option.dataset.state='wrong';option.append(element('span','g-answer-status','Pilihanmu'));}});feedback.hidden=false;feedback.textContent=(correct?'Tepat! ':'Belum tepat. ')+q.explanation;animate(feedback,[{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],450);animate(b,[{transform:'scale(.985)'},{transform:'scale(1)'}],350);next.disabled=false;updateProgress(step+1);next.focus({preventScroll:true});});answers.append(b);});next.addEventListener('click',()=>{step++;if(step===data.quiz.length)renderResult();else renderQuestion(true);find('g-question-body').querySelector('button').focus({preventScroll:true});});body.append(heading,answers,feedback,next);if(withMotion)animate(body,[{opacity:0,transform:'translateX(18px)'},{opacity:1,transform:'translateX(0)'}],500);}
  function renderResult(){updateProgress(data.quiz.length);const body=find('g-question-body');body.replaceChildren();body.append(element('h3','g-question',score===data.quiz.length?'Kamu sudah mengenal ketiganya.':'Terus jelajahi, terus belajar.'),element('p','g-result-number',score+' / '+data.quiz.length),element('p','g-detail-copy','Jawaban benar. Pilih satu kebiasaan baik dan bawa ke harimu.'));const retry=element('button','g-action g-next','Ulangi kuis');retry.type='button';retry.append(icon('rotate-right'));retry.addEventListener('click',()=>{step=0;score=0;renderQuestion(true);find('g-question-body').querySelector('button').focus({preventScroll:true});});body.append(retry);animate(body,[{opacity:0,transform:'translateY(15px)'},{opacity:1,transform:'translateY(0)'}],700);}
  renderQuestion();

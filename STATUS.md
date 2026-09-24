@@ -94,3 +94,10 @@
 - Preserved first concept in mobile-concept-v1.html and css/mobile-concept-v1.css; review now compares revision 2 against revision 1.
 - Verified no overflow at 320/360/390/430px; no asset or script errors; tabs, dialog/Escape, quiz feedback and comparison work. Hero and pillar screenshots visually inspected.
 - Production page remains unchanged; awaiting review of revised aesthetics. Preview remains /mobile-review.html.
+
+## 2026-09-24: Approved mobile design and five-question quiz
+- Applied approved editorial concept to index.html using css/mobile.css (mobile breakpoint <=700px); desktop layout retained.
+- Replaced quiz with the user's five questions and all four options in exact order. Answer key: B, B, C, A, C. Progress maximum derives from question count; score, feedback and retry support all five.
+- Added requested MINI QUIZ introduction and LET'S TAKE ACTION closing message, including Ajegang budaya Bali text.
+- Updated scripts/verify.cjs for five questions and four options. Full browser checks passed for keyboard, dialogs, quiz, menu, light/dark, 320–1440px, reveals and reduced motion. Additional full quiz checks passed at 320/360/390/430px, including progress, retry and long-option overflow. Quiz/closing screenshots visually inspected.
+- User explicitly approved implementation and push to GitHub main; release commit follows this entry.
