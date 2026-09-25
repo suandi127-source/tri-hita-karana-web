@@ -1,9 +1,9 @@
 # STATUS.md — Project State & Multi-Agent Handoff
 
-> **Last Updated**: 2026-09-24 WITA
+> **Last Updated**: 2026-09-25 WITA
 > **Current Lead Agent**: OpenAI Codex
 > **Previous Agent**: Morty (Hermes Agent)
-> **Status**: ✅ Portrait redesign successfully pushed to GitHub main
+> **Status**: Materi 2 (Nyepi & Ogoh-ogoh) completed and verified locally; not yet published.
 > **GitHub Pages**: https://suandi127-source.github.io/tri-hita-karana-web/
 
 ---
@@ -168,3 +168,12 @@
 - Added critical full-width/borderless sizing directly when creating the persistent frame, with height measured from viewport minus actual global bar. Resizes with viewport and bar changes.
 - Versioned navigation and global stylesheet URLs so browsers request updated assets.
 - scripts/verify-frame.cjs strips frame CSS deliberately and verifies full viewport width/remaining height at 320/390/1440 widths and changing heights; screenshot inspected. Global music tests still pass without pauses/restarts in allowed and blocked autoplay modes.
+
+## 2026-09-25: Materi 2 — Nyepi & Ogoh-ogoh
+- Located the existing second-topic placeholder in the latest GitHub main. Local checkout was 16 commits behind; fast-forwarded from 9685ed0 to 2b8bf1c before editing, preserving all newer topic-hub and music work.
+- Activated the second homepage card and added nyepi-ogoh-ogoh.html. Included the supplied Nyepi/Catur Brata Penyepian and ogoh-ogoh/Pengerupukan copy, reflection, quotes and closing message without emoji. Image areas are explicitly labeled CSS placeholders, including the topic card; no image downloads or generated assets.
+- Used the existing forest/ivory editorial identity, local fonts, responsive reading layout and shared quiz styling. Extracted the existing quiz behavior into js/quiz.js for both lessons; preserved Materi 1 and updated its older concept pages to load the shared script.
+- Added all five supplied questions and four options in exact order. Answer key: B, B, C, A, B. Includes progress, correct/incorrect feedback, score and retry.
+- Extended the persistent topic frame to support both slugs, direct entry, correct frame/page titles and focus return to the visible card. Replacing iframe location avoids adding a competing browser-history entry when switching lessons. The outer music player remains mounted.
+- Verification: scripts/verify-nyepi.cjs passed (both quizzes, 5/5 and 0/5, retry, keyboard, 320/390/430/768/1024/1440px, direct entry/history, continuous music and explicit pause). Existing scripts/verify.cjs and scripts/verify-global-music.cjs passed. No failed assets or JavaScript errors in the new lesson check. Desktop/mobile/dark previews in assets/previews/nyepi-*.png visually reviewed. Physical iPhone Safari not tested.
+- Next: review local Materi 2 at http://127.0.0.1:4182/index.html?topic=nyepi-ogoh-ogoh, then replace placeholders when approved photos are available. Changes are local, not pushed or deployed.
