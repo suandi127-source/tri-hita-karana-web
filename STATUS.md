@@ -205,3 +205,9 @@
 - Updated `css/nyepi.css` and version query parameter to `v=20260925-photos`.
 - All visual placeholders in Materi 02 have been completely replaced with authentic, user-selected cultural photography.
 
+## 2026-09-25: Seamless gapless background music loop
+- Analyzed `assets/audio/tri-hita-karana.mp3` with ffmpeg and identified a ~1.155s silence at the start and ~0.09s silence at the end causing audible interruption upon loop reset.
+- Trimmed dead silence and applied a 3-second crossfade loop algorithm connecting the track tail directly into the musical start.
+- Verified 0ms silence detection and continuous playback without audible clicks or gap.
+- Versioned audio link to `?v=20260925-seamless` in `index.html` for instant cache busting.
+
