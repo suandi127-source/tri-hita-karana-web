@@ -5,11 +5,26 @@
  // Critical sizing must also work when a phone still has an older stylesheet cached.
  frame.style.cssText='display:block;width:100%;border:0;outline:none;background:#f5f1e8';
  const bar=document.querySelector('.site-bar');
+ function syncBarTheme(){
+  const source=!frame.hidden&&frame.contentDocument?.querySelector('#thk-green');
+  const properties=['bg','text','line','muted','focus'];
+  if(!source){
+   properties.forEach(name=>bar.style.removeProperty('--site-'+name));
+   bar.style.removeProperty('color-scheme');
+   return;
+  }
+  const style=getComputedStyle(source);
+  bar.style.colorScheme=style.colorScheme;
+  const values=[style.backgroundColor,style.color,...['line','muted','primary'].map(name=>style.getPropertyValue('--g-'+name))];
+  properties.forEach((name,index)=>bar.style.setProperty('--site-'+name,values[index]));
+ }
  function fitFrame(){frame.style.height=Math.max(0,innerHeight-bar.getBoundingClientRect().height)+'px';}
- addEventListener('resize',fitFrame);
+ addEventListener('resize',()=>{fitFrame();syncBarTheme();});
+ matchMedia('(prefers-color-scheme: dark)').addEventListener('change',syncBarTheme);
  new ResizeObserver(fitFrame).observe(bar);
  frame.addEventListener('load',()=>{
   const doc=frame.contentDocument;
+  syncBarTheme();
   doc.addEventListener('click',()=>window.startBaliMusic?.());
   doc.addEventListener('keydown',event=>{if(['Enter',' '].includes(event.key))window.startBaliMusic?.();});
  });
@@ -29,6 +44,7 @@
    }
   }
   document.title=topic?topics[key]+' | Bali in Every Corner':'Bali — Pilih ceritamu';
+  syncBarTheme();
  }
  document.addEventListener('click',event=>{
   const link=event.target.closest('a');if(!link||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;

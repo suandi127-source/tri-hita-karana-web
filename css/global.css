@@ -1,11 +1,10 @@
-.site-bar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px max(22px,calc((100% - 1120px)/2));background:#f5f1e8f5;border-bottom:1px solid #203d2d18;font:500 12px/1.4 'Plus Jakarta Sans',Arial,sans-serif;color:#203d2d;backdrop-filter:blur(12px)}
+.site-bar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px max(22px,calc((100% - 1120px)/2));background:var(--site-bg,#f6f4ed);border-bottom:1px solid var(--site-line,#203d2d18);font:500 12px/1.4 'Plus Jakarta Sans',Arial,sans-serif;color:var(--site-text,#203d2d)}
 .site-bar .all-topics{display:inline-flex;align-items:center;min-height:44px;padding:10px 0;background:transparent;color:inherit;border-radius:0;text-decoration:none}
 .site-bar button{width:auto;height:auto;min-height:44px;padding:10px 0 10px 16px;border:0;border-radius:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
-.site-bar .all-topics:hover,.site-bar button:hover{background:transparent;color:#65715b}
-.site-bar :focus-visible{outline:3px solid #997127;outline-offset:3px}
+.site-bar .all-topics:hover,.site-bar button:hover{background:transparent;color:var(--site-muted,#65715b)}
+.site-bar :focus-visible{outline:3px solid var(--site-focus,#997127);outline-offset:3px}
 html{scroll-padding-top:76px}
 .site-bar,.site-bar *{box-sizing:border-box}
 .topic-frame{display:block;width:100%;height:calc(100vh - 53px);height:calc(100dvh - 53px);border:0;background:#f5f1e8}
 .topic-frame[hidden]{display:none}
 body.topic-open{overflow:hidden}
-@media(prefers-color-scheme:dark){html[style*="light dark"] .site-bar{background:#17261ff5;color:#ede8d9;border-bottom-color:#ede8d925}}

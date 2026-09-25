@@ -184,3 +184,9 @@
 - Live lesson: https://baliineverycorner.my.id/index.html?topic=nyepi-ogoh-ogoh
 - A separate Vercel integration reported a failed deployment for this commit. It does not serve the current custom domain; the GitHub Pages live release succeeded.
 - Next: replace the labeled image placeholders when photos are supplied.
+
+## 2026-09-25: Match global navigation to the active page
+- Fixed the persistent Semua topik/music bar retaining ivory colors above dark lesson pages. The bar now reads the active lesson's actual background/text and existing border, hover and focus tokens; returning home restores the homepage palette.
+- Synchronizes on frame load, topic/history navigation, viewport resize and system light/dark changes. Uses the lesson's existing colors rather than maintaining duplicate palettes. Versioned the shell CSS/script links for deployment.
+- scripts/verify-bar-theme.cjs passed for both lessons and home at 320/390/1440px, light/dark switching and Back/Forward. Dark mobile screenshot visually reviewed at assets/previews/nyepi-bar-dark.png.
+- Publishing this correction as a continuation of the live Materi 2 update. Image placeholders remain the next content step.
