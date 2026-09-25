@@ -32,6 +32,16 @@
 #thk-green.nyepi-lesson .g-action { border-radius:3px; min-height:48px; }
 #thk-green.nyepi-lesson .g-quiz-box { border-radius:3px; }
 #thk-green.nyepi-lesson .g-kicker { font-size:10px; }
+/* Match Tri Hita Karana's staggered entrance and quiet reading transitions. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior:smooth; }
+  #thk-green .n-hero > div > * { animation:g-enter .9s cubic-bezier(.22,1,.36,1) both; }
+  #thk-green .n-hero > div > :nth-child(2) { animation-delay:80ms; }
+  #thk-green .n-hero > div > :nth-child(3) { animation-delay:160ms; }
+  #thk-green .n-hero > div > :nth-child(4) { animation-delay:240ms; }
+  #thk-green .n-hero > div > :nth-child(5) { animation-delay:320ms; }
+  #thk-green .n-hero-placeholder { animation:g-enter 1.1s .12s cubic-bezier(.22,1,.36,1) both; }
+}
 @media(max-width:700px) {
   #thk-green .n-header { align-items:flex-start; flex-direction:column; gap:0; padding-block:10px; }
   #thk-green .n-header nav { gap:24px; }

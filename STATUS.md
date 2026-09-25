@@ -190,3 +190,10 @@
 - Synchronizes on frame load, topic/history navigation, viewport resize and system light/dark changes. Uses the lesson's existing colors rather than maintaining duplicate palettes. Versioned the shell CSS/script links for deployment.
 - scripts/verify-bar-theme.cjs passed for both lessons and home at 320/390/1440px, light/dark switching and Back/Forward. Dark mobile screenshot visually reviewed at assets/previews/nyepi-bar-dark.png.
 - Publishing this correction as a continuation of the live Materi 2 update. Image placeholders remain the next content step.
+
+## 2026-09-25: Smooth Nyepi lesson motion
+- Matched the existing Tri Hita Karana entrance: hero text fades/slides into place with 80ms staggering and a separate soft placeholder entrance, using the existing g-enter keyframes.
+- Added one-time reading-block reveals through IntersectionObserver and the existing g-reveal transitions. Long chapters reveal by paragraph/list item instead of animating an entire tall section. In-page links scroll smoothly.
+- Connected the shared quiz animation callback for answer feedback, next questions, results and retry. No dependencies added.
+- Honors prefers-reduced-motion on initial load and live preference changes; cancels running JS animations and permanently reveals pending content when reduced motion is enabled. Keyboard focus also reveals its block immediately.
+- scripts/verify-nyepi-motion.cjs passed: staggered entrances, all reading blocks revealed once, quiz transitions and 5/5/retry, keyboard focus, live reduced-motion changes, and mobile/desktop layouts. CSS/JS URLs versioned for the live update.
