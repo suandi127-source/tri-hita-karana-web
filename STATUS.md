@@ -3,7 +3,7 @@
 > **Last Updated**: 2026-09-25 WITA
 > **Current Lead Agent**: OpenAI Codex
 > **Previous Agent**: Morty (Hermes Agent)
-> **Status**: Materi 2 (Nyepi & Ogoh-ogoh) completed and verified locally; not yet published.
+> **Status**: Materi 2 (Nyepi & Ogoh-ogoh) published to the live GitHub Pages domain.
 > **GitHub Pages**: https://suandi127-source.github.io/tri-hita-karana-web/
 
 ---
@@ -177,3 +177,10 @@
 - Extended the persistent topic frame to support both slugs, direct entry, correct frame/page titles and focus return to the visible card. Replacing iframe location avoids adding a competing browser-history entry when switching lessons. The outer music player remains mounted.
 - Verification: scripts/verify-nyepi.cjs passed (both quizzes, 5/5 and 0/5, retry, keyboard, 320/390/430/768/1024/1440px, direct entry/history, continuous music and explicit pause). Existing scripts/verify.cjs and scripts/verify-global-music.cjs passed. No failed assets or JavaScript errors in the new lesson check. Desktop/mobile/dark previews in assets/previews/nyepi-*.png visually reviewed. Physical iPhone Safari not tested.
 - Next: review local Materi 2 at http://127.0.0.1:4182/index.html?topic=nyepi-ogoh-ogoh, then replace placeholders when approved photos are available. Changes are local, not pushed or deployed.
+
+## 2026-09-25: Publish Materi 2
+- User explicitly requested publication. Pushed a9d972c to origin/main.
+- GitHub Pages deployment 36087991285 completed successfully. The custom domain baliineverycorner.my.id is served by GitHub Pages; verified HTTP 200 for the new lesson, shared quiz, lesson script, stylesheet and homepage, with the new topic present.
+- Live lesson: https://baliineverycorner.my.id/index.html?topic=nyepi-ogoh-ogoh
+- A separate Vercel integration reported a failed deployment for this commit. It does not serve the current custom domain; the GitHub Pages live release succeeded.
+- Next: replace the labeled image placeholders when photos are supplied.
