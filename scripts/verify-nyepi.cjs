@@ -29,8 +29,8 @@ const { chromium } = require('playwright');
     const frame = page.frameLocator('.topic-frame');
     await frame.locator('#g-title').waitFor();
     assert.match(page.url(),/topic=nyepi-ogoh-ogoh/);
-    assert.equal(await frame.locator('.n-placeholder').count(),2);
-    assert.equal(await frame.locator('img').count(),0);
+    assert.equal(await frame.locator('.n-placeholder').count(),0);
+    assert.equal(await frame.locator('img').count(),2);
     assert.equal(await frame.locator('body').evaluate(el=>/\p{Extended_Pictographic}/u.test(el.innerText)),false);
     for (const [step,answer] of [1,1,2,0,1].entries()) {
       assert.equal(await frame.locator('.g-answer').count(),4);

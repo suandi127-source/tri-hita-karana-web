@@ -1,9 +1,9 @@
 # STATUS.md — Project State & Multi-Agent Handoff
 
 > **Last Updated**: 2026-09-25 WITA
-> **Current Lead Agent**: OpenAI Codex
+> **Current Lead Agent**: Antigravity
 > **Previous Agent**: Morty (Hermes Agent)
-> **Status**: Materi 2 (Nyepi & Ogoh-ogoh) published to the live GitHub Pages domain.
+> **Status**: Materi 2 photos fully integrated (Cover, Nyepi Hero, and Ogoh-ogoh chapter). All placeholders replaced.
 > **GitHub Pages**: https://suandi127-source.github.io/tri-hita-karana-web/
 
 ---
@@ -197,3 +197,11 @@
 - Connected the shared quiz animation callback for answer feedback, next questions, results and retry. No dependencies added.
 - Honors prefers-reduced-motion on initial load and live preference changes; cancels running JS animations and permanently reveals pending content when reduced motion is enabled. Keyboard focus also reveals its block immediately.
 - scripts/verify-nyepi-motion.cjs passed: staggered entrances, all reading blocks revealed once, quiz transitions and 5/5/retry, keyboard focus, live reduced-motion changes, and mobile/desktop layouts. CSS/JS URLs versioned for the live update.
+
+## 2026-09-25: Integrate all 3 user-curated photos for Materi 2
+- Integrated user-provided `Image 1.jpg` into `assets/images/ogoh-ogoh-cover.jpg` as the active cover photo for Card 02 (Nyepi & Ogoh-ogoh) on the homepage, with dark gradient overlay, responsive clamp, and focal alignment.
+- Integrated `suasana nyepi.jpg` into `assets/images/nyepi-suasana.jpg` for the Nyepi Hero section in `nyepi-ogoh-ogoh.html`, with arched top framing (`aspect-ratio: 4/5`, `border-radius: 160px 160px 4px 4px`), quiet caption overlay, and responsive mobile sizing (`5/3`).
+- Integrated `ogoh ogoh.jpg` into `assets/images/ogoh-ogoh-patung.jpg` for Bab 02 (Ogoh-ogoh) in `nyepi-ogoh-ogoh.html`, with 1:1 square aspect ratio preserving the full golden winged Garuda statue clean without caption text overlay, and responsive mobile layout.
+- Updated `css/nyepi.css` and version query parameter to `v=20260925-photos`.
+- All visual placeholders in Materi 02 have been completely replaced with authentic, user-selected cultural photography.
+
