@@ -1,4 +1,4 @@
-/* Bali in Every Corner: portrait-led editorial layout, without runtime dependencies. */
+/* Bali in Every Corners: portrait-led editorial layout, without runtime dependencies. */
 body { margin: 0; background: light-dark(#f6f7f0, #13251b); }
 #thk-green {
   --g-bg: light-dark(#f6f7f0, #13251b);

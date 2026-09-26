@@ -43,7 +43,7 @@
     frame.dataset.topic=key;
    }
   }
-  document.title=topic?topics[key]+' | Bali in Every Corner':'Bali — Pilih ceritamu';
+  document.title=topic?topics[key]+' | Bali in Every Corners':'Bali — Pilih ceritamu';
   syncBarTheme();
  }
  document.addEventListener('click',event=>{

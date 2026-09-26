@@ -1,9 +1,9 @@
 # STATUS.md — Project State & Multi-Agent Handoff
 
-> **Last Updated**: 2026-09-25 WITA
+> **Last Updated**: 2026-09-26 WITA
 > **Current Lead Agent**: Antigravity
 > **Previous Agent**: Morty (Hermes Agent)
-> **Status**: Materi 2 photos fully integrated (Cover, Nyepi Hero, and Ogoh-ogoh chapter). All placeholders replaced.
+> **Status**: Pluralized branding to "Bali in Every Corners" across all pages, navigation, and tests. Live state verified.
 > **GitHub Pages**: https://suandi127-source.github.io/tri-hita-karana-web/
 
 ---
@@ -210,4 +210,9 @@
 - Trimmed dead silence and applied a 3-second crossfade loop algorithm connecting the track tail directly into the musical start.
 - Verified 0ms silence detection and continuous playback without audible clicks or gap.
 - Versioned audio link to `?v=20260925-seamless` in `index.html` for instant cache busting.
+
+## 2026-09-26: Pluralize brand name to "Bali in Every Corners"
+- Verified live website state: `https://baliineverycorner.my.id/` is online and healthy (HTTP 200).
+- Updated brand name from "Bali in Every Corner" to "Bali in Every Corners" (plural) across all pages and components (`index.html`, `tri-hita-karana.html`, `nyepi-ogoh-ogoh.html`, `js/navigation.js`, preview pages, `css/style.css`, and `scripts/verify.cjs`).
+- Verified local dev server (port 4182) serves updated branding across all routes without errors.
 

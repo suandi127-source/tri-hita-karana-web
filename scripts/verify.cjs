@@ -18,7 +18,7 @@ const { chromium } = require('playwright');
     });
     page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
     assert.equal((await page.goto(process.env.PREVIEW_URL || 'http://127.0.0.1:4182/tri-hita-karana.html?embedded=1', { waitUntil: 'networkidle' })).status(), 200);
-    assert.equal(await page.title(), 'Bali in Every Corner | Tri Hita Karana');
+    assert.equal(await page.title(), 'Bali in Every Corners | Tri Hita Karana');
     assert.equal(await page.locator('h1').count(), 1);
     assert.match(await page.locator('#g-school').innerText(), /Berdoa sebelum belajar/);
     await page.evaluate(() => document.fonts.ready);
