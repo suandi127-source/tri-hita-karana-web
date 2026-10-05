@@ -7,5 +7,5 @@
 const frame=document.getElementById('preview'), phone=document.getElementById('phone'), state=document.getElementById('state');
 for(const id of ['new','old'])document.getElementById(id).onclick=()=>{frame.src=id==='new'?'mobile-concept.html':'mobile-concept-v1.html';for(const key of ['new','old'])document.getElementById(key).setAttribute('aria-pressed',String(key===id));state.textContent=(id==='new'?'Konsep baru':'Konsep sebelumnya')+' · scroll di dalam preview. Menu, tab, detail, dan kuis bisa dicoba.';};
 document.getElementById('size').onchange=e=>phone.style.width=(Number(e.target.value)+16)+'px';phone.style.width='406px';
-</script></body></html>
+</script><script data-goatcounter="https://baliineverycorner.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>
 
