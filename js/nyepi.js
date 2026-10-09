@@ -15,7 +15,8 @@ initBaliQuiz(root, [
 ], {
   animate,
   success:'Kamu sudah mengenal Nyepi & Ogoh-ogoh.',
-  closing:'Jawaban benar. Bawa semangat introspeksi dan pengendalian diri ke keseharianmu.'
+  closing:'Jawaban benar. Bawa semangat introspeksi dan pengendalian diri ke keseharianmu.',
+  trackId:'nyepi-ogoh-ogoh'
 });
 
 // Reveal individual reading blocks once, so long chapters stay paced on mobile.

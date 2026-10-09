@@ -218,3 +218,12 @@
 - Pushed commit `336e8fc` to `origin/main`.
 - Verified live deployment on `https://baliineverycorner.my.id/`: HTTP 200 and "Bali in Every Corners" active across homepage and all lesson pages.
 
+## 2026-10-09: GoatCounter analytics + quiz completion counter
+
+- **Analytics installed**: Added GoatCounter (`baliineverycorner.goatcounter.com`) to every public page. Free, cookieless, GDPR-friendly; dashboard at `https://baliineverycorner.goatcounter.com`.
+- **Critical bug found & fixed — lesson pageviews were never counted.** Lesson pages load inside a persistent same-origin `<iframe>` (from `index.html?topic=...`). GoatCounter's `count.js` skips ALL counting inside frames unless `allow_frame:true`. Added `data-goatcounter-settings='{"allow_frame":true}'` to `tri-hita-karana.html` and `nyepi-ogoh-ogoh.html`, so lesson pageviews now register (previously only `/` was ever counted).
+- **Quiz funnel tracking**: `js/quiz.js` now emits events `kuis-mulai/<slug>` (first answer clicked) and `kuis-selesai/<slug>` (all 5 answered) via `goatcounter.count({event:true})`. Slugs wired through `js/app.js` (`tri-hita-karana`) and `js/nyepi.js` (`nyepi-ogoh-ogoh`).
+- **Public completion badge**: New pill above each quiz shows "N orang sudah menyelesaikan kuis ini". Reads `counter/kuis-selesai/<slug>.json` directly from the browser (GoatCounter's counter endpoint sends `access-control-allow-origin: *`); hides itself when the count is 0. Styled in `css/style.css` with existing `--g-soft`/`--g-primary` tokens.
+- **Verification**: `node --check` clean on all JS. Playwright end-to-end (real entry point `index.html?topic=...`, quiz played inside the iframe) confirmed: 2 pageviews sent (home + lesson frame), badge rendered `7`, and both `kuis-mulai` + `kuis-selesai` events fired per lesson with the correct slug. Zero page errors. `quiz.js` cache-busted to `?v=2`.
+- **Note**: GoatCounter account email is still a placeholder (`goatcounter@baliineverycorner.my.id`) and should be replaced via Settings → Your email to avoid account warnings. Historic traffic before the tracker is unrecoverable.
+
